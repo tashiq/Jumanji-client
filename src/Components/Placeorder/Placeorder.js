@@ -10,7 +10,7 @@ const Placeorder = () => {
     const { id } = useParams();
     const [spot, setSpot] = useState([]);
     const history = useHistory();
-    const url = `http://localhost:4000/spots/${id}`
+    const url = `https://cryptic-earth-77729.herokuapp.com/spots/${id}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -26,7 +26,7 @@ const Placeorder = () => {
         const status = "pending";
         const id = _id;
         const newOrder = { uid, phone, address, img, name, price, description, id, status };
-        fetch(`http://localhost:4000/orders/`, {
+        fetch(`https://cryptic-earth-77729.herokuapp.com/orders/`, {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

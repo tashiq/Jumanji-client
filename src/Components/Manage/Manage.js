@@ -8,14 +8,14 @@ const Manage = () => {
     // const [del, setDel] = useState(false);
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:4000/orders')
+        fetch('https://cryptic-earth-77729.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [orders])
     const handleDelete = (id) => {
         const ans = window.confirm('Do you want to delete this data?');
         if (ans) {
-            fetch(`http://localhost:4000/orders/${id}`, {
+            fetch(`https://cryptic-earth-77729.herokuapp.com/orders/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -33,7 +33,7 @@ const Manage = () => {
         const restOrder = orders.filter(order => order._id !== id)
         const currentOrder = orders.find(order => order._id === id)
 
-        fetch(`http://localhost:4000/orders/${id}`, {
+        fetch(`https://cryptic-earth-77729.herokuapp.com/orders/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -74,7 +74,7 @@ const Manage = () => {
                                                     <p>{description}</p>
                                                     <h4 className="card-text">
                                                         Price: $ {price}</h4>
-                                                    <p>UID: {uid}</p>
+                                                    <p>Ordered By: {uid}</p>
                                                     <p><strong>Status: <span className={status === "approved" ? "text-success" : "text-danger"}>{status}</span></strong></p>
                                                     <button className="btn btn-outline-danger" onClick={() => handleDelete(_id)}>Delete</button>
                                                     <button className="btn btn-outline-warning ms-2" onClick={() => handleProcess(_id)}>Process</button>

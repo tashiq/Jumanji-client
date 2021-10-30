@@ -14,7 +14,7 @@ const AddService = () => {
         const description = desRef.current.value;
         const newService = { name, description, img, price };
         e.target.reset();
-        fetch('http://localhost:4000/spots', {
+        fetch('https://cryptic-earth-77729.herokuapp.com/spots', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -1,9 +1,9 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyBn-IJr2oycBiWOu98mgPLaGreY737zGbE",
-    authDomain: "clear-authentication.firebaseapp.com",
-    projectId: "clear-authentication",
-    storageBucket: "clear-authentication.appspot.com",
-    messagingSenderId: "203827877090",
-    appId: "1:203827877090:web:4f8c40d98afcdc405c7abb"
+    apiKey: "AIzaSyAWd6h3xUiTrZWjHjTMF3f9uEQ7W520Tdk",
+    authDomain: "assingment-2a620.firebaseapp.com",
+    projectId: "assingment-2a620",
+    storageBucket: "assingment-2a620.appspot.com",
+    messagingSenderId: "950570946986",
+    appId: "1:950570946986:web:bf7db79528153584bb9bd3"
 };
 export default firebaseConfig;
