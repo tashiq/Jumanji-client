@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.service:hover{
+  color:rgb(1, 1, 27);
+  background-color: #e4f5eb;
+}
+/* d-flex justify-content-evenly */
+.footer{
+  display: flex;
+  justify-content: space-evenly;
+}
+#special{
+  display: flex;
+}
+.active{
+  border: 1px solid white;
+  border-radius: 15px;
+}
+@media only screen and (max-width: 720px)  {
+  .footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #special{
+    display: block;
+  }
+}
