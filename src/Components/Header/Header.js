@@ -22,7 +22,7 @@ const Header = () => {
                             user.email ?
                                 <div id="special">
                                     <Nav.Link as={HashLink} to="/add" className="">Add an Spot</Nav.Link>
-                                    <Nav.Link as={HashLink} to="/manage">Manage Spots</Nav.Link>
+                                    <Nav.Link as={HashLink} to="/manage">Manage Orders</Nav.Link>
                                     <Nav.Link as={HashLink} to="/orders">My Reservations</Nav.Link>
                                     <button onClick={logOut} className="btn bg-white" title="log out">
                                         <span>{user.displayName + ' '}</span>

@@ -10,17 +10,7 @@ const Services = () => {
             .then(res => res.json())
             .then(data => setServices(data));
     }, []);
-    const handleOrder = (toSave) => {
-        fetch('http://localhost:4000/orders', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(toSave)
-        })
-            .then(res => res.json())
-            .then(data => console.log(data))
-    }
+
     return (
 
         <div>
@@ -29,7 +19,7 @@ const Services = () => {
                 {
                     services?.map(service => <Service key={service._id} data={service}>
                         <Link to={'/spots/' + service._id}>
-                            <button className="btn btn-dark" onClick={() => handleOrder(service)}>Book Now</button>
+                            <button className="btn btn-dark">Book Now</button>
                         </Link>
                     </Service>)
                 }

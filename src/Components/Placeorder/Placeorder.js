@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ListGroup } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 
 const Placeorder = () => {
+    const phoneRef = useRef();
+    const addressRef = useRef();
+
     const { id } = useParams();
     const [spot, setSpot] = useState([]);
     const history = useHistory();
@@ -14,20 +17,29 @@ const Placeorder = () => {
             .then(data => setSpot(data))
     }, []);
     const { user } = useAuth();
-    const { photoURL, displayName, email } = user;
-    const { img, name, price } = spot;
+    const { uid, photoURL, displayName, email } = user;
+    const { _id, img, name, price, description } = spot;
     const handleSubmit = e => {
         e.preventDefault();
-        fetch(`http://localhost:4000/orders`, {
-            method: "DELETE"
+        const phone = phoneRef.current.value;
+        const address = addressRef.current.value;
+        const status = "pending";
+        const id = _id;
+        const newOrder = { uid, phone, address, img, name, price, description, id, status };
+        fetch(`http://localhost:4000/orders/`, {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newOrder)
         })
             .then(res => res.json())
             .then(data => {
                 if (data) {
-                    alert('Order Placed');
-                    history.push('/home');
+                    alert('Order Is Placed')
                 }
             })
+        e.target.reset();
     }
     return (
         <div className="mt-5 pt-3">
@@ -44,10 +56,10 @@ const Placeorder = () => {
                         <form onSubmit={handleSubmit}>
                             <input required type="text" name="phone" className="form-control mb-2"
                                 placeholder="Phone"
-                                id="" />
+                                id="" ref={phoneRef} />
                             <input required type="text" name="address" className="form-control mb-2"
                                 placeholder="Address"
-                                id="" />
+                                id="" ref={addressRef} />
                             <input required type="date" name="date" className="form-control mb-2"
                                 placeholder="Date"
                                 id="" />
@@ -66,12 +78,13 @@ const Placeorder = () => {
             <div>
                 <div className="card mb-3 text-center mx-auto" style={{ maxWidth: '540px' }}>
                     <div className="row g-0">
-                        <div className="col-md-4">
+                        <div className="col-md-12">
                             <img src={img} className="img-fluid rounded-start" alt="..." />
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-12">
                             <div className="card-body">
                                 <h3 className="card-title">{name}</h3>
+                                <p>{description}</p>
                                 <h4 className="card-text">
                                     Price: $ {price}</h4>
 
