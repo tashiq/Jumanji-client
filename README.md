@@ -11,3 +11,6 @@ JUMANJI
 > Highest bungee
 
 > Coolest rides
+
+>Materials used for front end: React, React Router, Material UI, Firebase authentication, JavaScript.
+
