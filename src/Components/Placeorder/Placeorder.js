@@ -44,7 +44,7 @@ const Placeorder = () => {
     return (
         <div className="mt-5 pt-3">
             <div className="border d-flex flex-column align-items-center justify-content-center mb-3 p-2">
-                <img src={`data:image/png;base64, ${photoURL}`} className="img-fluid p-2" style={{ borderRadius: '50%', width: '250px' }} alt="..." />
+                <img src={photoURL} className="img-fluid p-2" style={{ borderRadius: '50%', width: '250px' }} alt="..." />
                 <ListGroup>
                     <ListGroup.Item>
                         <h3>Name: {displayName}</h3>
@@ -79,7 +79,7 @@ const Placeorder = () => {
                 <div className="card mb-3 text-center mx-auto" style={{ maxWidth: '540px' }}>
                     <div className="row g-0">
                         <div className="col-md-12">
-                            <img src={img} className="img-fluid rounded-start" alt="..." />
+                            <img src={`data:image/png;base64, ${img}`} className="img-fluid rounded-start" alt="..." />
                         </div>
                         <div className="col-md-12">
                             <div className="card-body">
