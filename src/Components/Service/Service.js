@@ -9,7 +9,7 @@ const Service = ({ data, children }) => {
     let small = description.slice(0, 300);
     const [toggle, setToggle] = useState(true);
     const [content, setContent] = useState(small);
-
+    console.log(img);
     const btn = (<Button variant='outlined' onClick={() => {
         setToggle(!toggle);
         setContent(toggle ? description : small);
@@ -19,7 +19,9 @@ const Service = ({ data, children }) => {
         <Col>
             <div className='card-main'>
                 <div>
-                    <img src={img} alt={name} className='card-img' />
+                    <img src={`data:image/png;base64, ${img}`}
+                        alt={name}
+                        className='card-img' />
                 </div>
                 <div className='card-title'>
                     {name}
