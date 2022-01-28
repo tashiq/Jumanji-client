@@ -9,7 +9,7 @@ const Orders = () => {
     const { user } = useAuth();
     const { uid } = user;
     useEffect(() => {
-        fetch(`https://cryptic-earth-77729.herokuapp.com/orders`)
+        fetch(`https://agile-thicket-23193.herokuapp.com/orders`)
             .then(res => res.json())
             .then(data => {
                 const mine = data.filter(order => order.uid === uid)
@@ -21,7 +21,7 @@ const Orders = () => {
     const handleDelete = (id) => {
         const ans = window.confirm('Do you want to delete this data?');
         if (ans) {
-            fetch(`https://cryptic-earth-77729.herokuapp.com/orders/${id}`, {
+            fetch(`https://agile-thicket-23193.herokuapp.com/orders/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

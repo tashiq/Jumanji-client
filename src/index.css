@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,200&display=swap');
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -6,14 +7,96 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Montserrat', sans-serif;
 }
 .service:hover{
   color:rgb(1, 1, 27);
   background-color: #e4f5eb;
+}
+/* single service  */
+.card-main{
+  border: 1px solid rgb(14, 4, 51);
+  padding: 3px;
+  margin: 0 0 .6rem .6rem;
+  box-sizing: border-box;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  width: 100%;
+  height: auto;
+  box-shadow: 1px 1px 10px 1px rgb(84, 84, 85);
+  position: relative;
+  transition: border-radius .6s linear;
+  overflow: hidden;
+}
+
+.card-img{
+  width: 100%;
+  min-height: 400px; 
+  transition: transform .6s linear;
+}
+.card-main .card-title{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  background-color: rgb(184, 213, 238);
+  border-bottom-left-radius: 12px;
+  color: rgb(6, 5, 24);
+  border-bottom-right-radius: 12px;
+  padding: 5px 0;
+  margin: 0;
+  box-shadow: 0 -5px 10px black;
+  transition: top, bottom, border-radius, .6s linear;
+  overflow: hidden;
+  z-index: 100;
+}
+.card-main:hover .card-img{
+  transform: scale(1.5);
+}
+.card-main .hidden-content{
+  position: absolute;
+  height: auto;
+  top: 0;
+  left: 0;
+  background-color: rgba(16, 97, 37, 0.507);
+  font-size: 1.2rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 70px;
+  flex-direction: column;
+  color: white;
+  transform: translateY(400px);
+  opacity: 0;
+  overflow: hidden;
+}
+.card-main:hover .hidden-content{
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity, transform .6s ease-out;
+  /* top: 0; */
+}
+
+.hidden-content .price{
+  font-size: 1.5rem;
+  /* background-color: rgb(186, 186, 226); */
+  text-align: center;
+  padding: 5px 0;
+  color: rgb(255, 255, 255);
+  /* box-shadow: 3px 3px 7px black, -3px -3px 7px black; */
 }
 /* d-flex justify-content-evenly */
 .footer{

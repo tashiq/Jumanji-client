@@ -14,7 +14,7 @@ const AddService = () => {
         const description = desRef.current.value;
         const newService = { name, description, img, price };
         e.target.reset();
-        fetch('https://cryptic-earth-77729.herokuapp.com/spots', {
+        fetch('https://agile-thicket-23193.herokuapp.com/spots', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
