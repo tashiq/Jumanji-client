@@ -44,7 +44,7 @@ const Placeorder = () => {
     return (
         <div className="mt-5 pt-3">
             <div className="border d-flex flex-column align-items-center justify-content-center mb-3 p-2">
-                <img src={photoURL} className="img-fluid p-2" style={{ borderRadius: '50%', width: '250px' }} alt="..." />
+                <img src={`data:image/png;base64, ${photoURL}`} className="img-fluid p-2" style={{ borderRadius: '50%', width: '250px' }} alt="..." />
                 <ListGroup>
                     <ListGroup.Item>
                         <h3>Name: {displayName}</h3>
